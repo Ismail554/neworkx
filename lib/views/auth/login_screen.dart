@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Image.asset("assets/images/neworkx_logo.png", height: 35, width: 175),
               SizedBox(height: 20), // Add spacing between logo and text fields
              
-             Container(child: Text("data"),)
+             Container(child: Text("data"),width: double.infinity,)
             ],
           ),
         ),
