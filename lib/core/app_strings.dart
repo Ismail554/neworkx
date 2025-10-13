@@ -3,7 +3,7 @@ class AppStrings {
   static const String appName = "Newwork";
 
   // Welcome / Intro
-  static const String welcomeText = "Welcome to Newwork";
+  static const String welcomeText = "Welcome to Newworkx";
   static const String signIn = "Sign In to your Newwork";
   static const String forgotPassword = "Forgot password?";
   static const String loginButton = "Log In";

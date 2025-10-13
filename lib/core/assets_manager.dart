@@ -25,14 +25,14 @@ class IconAssets {
   static const String success = "$iconPath/success.png";
   static const String card1 = "$iconPath/card1.png";
   static const String card2 = "$iconPath/card2.png";
-   static const String product2 = "$iconPath/product2.png";
-      static const String product1 = "$iconPath/product1.png";
-         static const String product3 = "$iconPath/product3.png";
+  static const String product2 = "$iconPath/product2.png";
+  static const String product1 = "$iconPath/product1.png";
+  static const String product3 = "$iconPath/product3.png";
 }
 
 class JsonAssets {
   static const String loading = "$jsonPath/success.json";
-   static const String error = "$jsonPath/error.json";
+  static const String error = "$jsonPath/error.json";
    
 }
 
@@ -42,6 +42,7 @@ class SvgAssets {
   static const String facebookIcon = "$svgPath/facebook.svg";
   static const String appleIcon = "$svgPath/apple.svg";
   static const String home = "$svgPath/home.svg";
+  static const String logo = "$svgPath/logo.svg";
   static const String profile = "$svgPath/profile.svg";
   static const String settings = "$svgPath/settings.svg";
 }
