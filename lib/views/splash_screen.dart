@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:neworkx/views/auth/normal%20user/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,8 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
     
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(context
-        ,  MaterialPageRoute(builder: (_SplashScreenState) => const LoginScreen()));
+      if (!mounted) return;
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+      );
     });
   }
   @override
