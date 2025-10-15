@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class FontManager {
@@ -18,6 +19,12 @@ class FontManager {
 
   // ================== Text Styles ==================
 
+
+ static TextStyle bigTitle() => GoogleFonts.montserrat(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      );
   // Title Text
   static TextStyle titleText() => TextStyle(
         fontFamily: inter,
@@ -29,9 +36,8 @@ class FontManager {
       );
 
   // Subtitle Text
-  static TextStyle subtitleText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 16.sp,
+  static TextStyle subtitleText() => GoogleFonts.montserrat(
+        fontSize: 14.sp,
         fontWeight: w400,
         color: subtitleColor,
         height: 1.0,
@@ -39,11 +45,10 @@ class FontManager {
       );
 
   // Sub-subtitle Text
-  static TextStyle subSubtitleText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 18.sp,
+  static TextStyle subSubtitleText() => GoogleFonts.montserrat(
+        fontSize: 14.sp,
         fontWeight: w700,
-        color: subSubtitleColor,
+        color: AppColors.primaryColor,
         height: 1.0,
         letterSpacing: 0.0,
       );

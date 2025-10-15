@@ -13,6 +13,7 @@ class AppStrings {
 
   // Sign Up
   static const String signUpTitle = "Sign Up";
+  static const String subSignUpTitle = "Career starts here";
   static const String chooseSignUpType = "Choose your user type to start your training and career path";
   static const String agencyReferred = "Agency Referred";
   static const String normalUser = "Normal User";
@@ -28,8 +29,10 @@ class AppStrings {
 
   // Verify
   static const String verifyAccountTitle = "Verify your account";
+  static const String almostDone = "Almost done!";
   static const String verificationCodePrompt = "Enter verification code";
   static const String verificationCodeSent = "We sent a 6-digit code to ";
+  static const String verEmail = "Cha*****@cmail.com";
   static const String verifyAccountButton = "Verify Account";
   static const String resendCode = "Resend code in %s"; // Placeholder for seconds countdown
   static const String didntReceiveCode = "Didn't receive the code? Check your spam folder.";
