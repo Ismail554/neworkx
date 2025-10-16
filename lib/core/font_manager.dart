@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class FontManager {
@@ -18,92 +19,93 @@ class FontManager {
 
   // ================== Text Styles ==================
 
+  static TextStyle bigTitle() => GoogleFonts.montserrat(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
   // Title Text
   static TextStyle titleText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 22.sp,
-        fontWeight: w700,
-        color: mainTextColor,
-        height: 1.0,
-        letterSpacing: 0.0,
-      );
+    fontFamily: inter,
+    fontSize: 22.sp,
+    fontWeight: w700,
+    color: mainTextColor,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
 
   // Subtitle Text
-  static TextStyle subtitleText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 16.sp,
-        fontWeight: w400,
-        color: subtitleColor,
-        height: 1.0,
-        letterSpacing: 0.0,
-      );
+  static TextStyle subtitleText() => GoogleFonts.montserrat(
+    fontSize: 14.sp,
+    fontWeight: w400,
+    color: subtitleColor,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
 
   // Sub-subtitle Text
-  static TextStyle subSubtitleText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 18.sp,
-        fontWeight: w700,
-        color: subSubtitleColor,
-        height: 1.0,
-        letterSpacing: 0.0,
-      );
+  static TextStyle subSubtitleText() => GoogleFonts.montserrat(
+    fontSize: 14.sp,
+    fontWeight: w700,
+    color: AppColors.primaryColor,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
 
   // Header Subtitle
   static TextStyle headerSubtitleText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 14.sp,
-        fontWeight: w400,
-        color: subtitleColor,
-        height: 1.0,
-        letterSpacing: 0.0,
-      );
+    fontFamily: inter,
+    fontSize: 14.sp,
+    fontWeight: w400,
+    color: subtitleColor,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
 
   // Body / Caption Text (default)
   static TextStyle bodyText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 14.sp,
-        fontWeight: w400,
-        color: mainTextColor,
-        height: 1.0,
-        letterSpacing: 0.0,
-      );
+    fontFamily: inter,
+    fontSize: 14.sp,
+    fontWeight: w400,
+    color: mainTextColor,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
 
   // Button Text
   static TextStyle buttonText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 16.sp,
-        fontWeight: w700,
-        color: mainTextColor,
-        height: 1.0,
-        letterSpacing: 0.0,
-      );
+    fontFamily: inter,
+    fontSize: 16.sp,
+    fontWeight: w700,
+    color: mainTextColor,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
 
   // AppBar Text
   static TextStyle appBarText() => TextStyle(
-        fontFamily: inter,
-        fontSize: 16.sp,
-        fontWeight: w700,
-        color: mainTextColor,
-        height: 1.0,
-        letterSpacing: 0.0,
-      );
-      // Button Text (Regular, White)
-static TextStyle buttonTextRegular() => TextStyle(
-      fontFamily: inter,
-      fontSize: 16.sp,
-      fontWeight: FontWeight.w400,
-      color: AppColors.white,
-      height: 1.0,
-      letterSpacing: 0.0,
-    );// White Button Text (Regular, 16px)
-static TextStyle whiteButtonText() => TextStyle(
-      fontFamily: inter,
-      fontSize: 16.sp,
-      fontWeight: FontWeight.w400,
-      color: AppColors.white,       // text color
-      height: 1.0,
-      letterSpacing: 0.0,
-    );
-
-
+    fontFamily: inter,
+    fontSize: 16.sp,
+    fontWeight: w700,
+    color: mainTextColor,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
+  // Button Text (Regular, White)
+  static TextStyle buttonTextRegular() => TextStyle(
+    fontFamily: inter,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+    height: 1.0,
+    letterSpacing: 0.0,
+  ); // White Button Text (Regular, 16px)
+  static TextStyle whiteButtonText() => TextStyle(
+    fontFamily: inter,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white, // text color
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
 }

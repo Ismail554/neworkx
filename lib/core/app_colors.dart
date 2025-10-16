@@ -22,4 +22,8 @@ class AppColors {
   static const Color blue = Color(0xFF1E90FF);
   static const Color blueTransparent = Color(0x421E90FF); // 0x26 = ~15% opacity
   static const Color amberTransparent = Color(0x4DA66E00); // from #A66E004D
+
+  static const Color borderColor = Color(0xffD4D4D4);
+
+  static const Color statFillColor = Color(0xf1E90FF26);
 }
