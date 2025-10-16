@@ -60,19 +60,13 @@ class _VerifyScreenState extends State<VerifyScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(
-          color: const Color(0xFF7C3AED),
-          width: 1.5,
-        ),
+        border: Border.all(color: const Color(0xFF7C3AED), width: 1.5),
       ),
     );
 
     final focusedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration!.copyWith(
-        border: Border.all(
-          color: const Color(0xFF7C3AED),
-          width: 2,
-        ),
+        border: Border.all(color: const Color(0xFF7C3AED), width: 2),
         boxShadow: [
           BoxShadow(
             color: const Color(0xFF7C3AED).withOpacity(0.2),
@@ -86,10 +80,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
     final submittedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration!.copyWith(
         color: const Color(0xFFF3F4F6),
-        border: Border.all(
-          color: const Color(0xFF7C3AED),
-          width: 1.5,
-        ),
+        border: Border.all(color: const Color(0xFF7C3AED), width: 1.5),
       ),
     );
 
@@ -105,9 +96,8 @@ class _VerifyScreenState extends State<VerifyScreen> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(Icons.arrow_back_outlined, color: Colors.black)),
-                
-      
+                  child: Icon(Icons.arrow_back_outlined, color: Colors.black),
+                ),
               ),
             ),
             Text(

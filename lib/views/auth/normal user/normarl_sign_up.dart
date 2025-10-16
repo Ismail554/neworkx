@@ -24,7 +24,12 @@ class _NormalSignUpState extends State<NormalSignUp> {
             children: [
               Align(
                 alignment: AlignmentGeometry.centerLeft,
-                child: Icon(Icons.arrow_back_outlined, color: Colors.black),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.arrow_back_outlined, color: Colors.black),
+                ),
               ),
               Text(
                 AppStrings.signUpTitle,
@@ -45,28 +50,52 @@ class _NormalSignUpState extends State<NormalSignUp> {
                       offset: const Offset(0, 4),
                     ),
                   ],
-                ),   
+                ),
                 child: Column(
                   children: [
-                    LabeledField(hintText: "Full Name", keyboardType: TextInputType.name, prefixIcon: Icon(Icons.person_4_outlined)),
+                    LabeledField(
+                      hintText: "Full Name",
+                      keyboardType: TextInputType.name,
+                      prefixIcon: Icon(Icons.person_4_outlined),
+                    ),
                     AppSpacing.h6,
-                     LabeledField(hintText: "Email", keyboardType: TextInputType.name, prefixIcon: Icon(Icons.email_outlined)),
-                              AppSpacing.h6,
-                  LabeledField(hintText: "Phone", keyboardType: TextInputType.name, prefixIcon: Icon(Icons.local_phone_sharp)),
-                           AppSpacing.h6,
-                   LabeledField(hintText: "Password", keyboardType: TextInputType.name, prefixIcon: Icon(Icons.lock_outline_rounded)),
-                            AppSpacing.h6,
-                    LabeledField(hintText: "Confirm Password", keyboardType: TextInputType.name, prefixIcon: Icon(Icons.lock_outline_rounded)),
-                             AppSpacing.h6,
+                    LabeledField(
+                      hintText: "Email",
+                      keyboardType: TextInputType.name,
+                      prefixIcon: Icon(Icons.email_outlined),
+                    ),
+                    AppSpacing.h6,
+                    LabeledField(
+                      hintText: "Phone",
+                      keyboardType: TextInputType.name,
+                      prefixIcon: Icon(Icons.local_phone_sharp),
+                    ),
+                    AppSpacing.h6,
+                    LabeledField(
+                      hintText: "Password",
+                      keyboardType: TextInputType.name,
+                      prefixIcon: Icon(Icons.lock_outline_rounded),
+                    ),
+                    AppSpacing.h6,
+                    LabeledField(
+                      hintText: "Confirm Password",
+                      keyboardType: TextInputType.name,
+                      prefixIcon: Icon(Icons.lock_outline_rounded),
+                    ),
+                    AppSpacing.h6,
                   ],
                 ),
-                
-               
               ),
-               AppSpacing.h32,
-              CustomPrimaryButton(text: AppStrings.createAccountButton, onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => VerifyScreen(),));
-              },),
+              AppSpacing.h32,
+              CustomPrimaryButton(
+                text: AppStrings.createAccountButton,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => VerifyScreen()),
+                  );
+                },
+              ),
             ],
           ),
         ),

@@ -6,6 +6,8 @@ import 'package:neworkx/core/app_colors.dart';
 import 'package:neworkx/core/app_padding.dart';
 import 'package:neworkx/core/font_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neworkx/views/HomePage/homepage.dart';
+import 'package:neworkx/views/auth/normal%20user/forgot_pass.dart';
 import 'package:neworkx/views/auth/normal%20user/normarl_sign_up.dart';
 import 'package:neworkx/views/auth/normal%20user/sign_up.dart';
 
@@ -51,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 AppSpacing.h40,
 
-                // Login Card                                   
+                // Login Card
                 Container(
                   width: double.infinity.w,
                   padding: EdgeInsets.all(20.r),
@@ -95,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           hintText: "Phone or Email",
                           controller: _emailPhoneController,
                           keyboardType: TextInputType.emailAddress,
-                          prefixIcon: Icon( Icons.mail_outline),
+                          prefixIcon: Icon(Icons.mail_outline),
                           validator: (value) {
                             if (value == null || value.trim().isEmpty) {
                               return 'Enter phone or email';
@@ -139,15 +141,35 @@ class _LoginScreenState extends State<LoginScreen> {
                           alignment: Alignment.centerRight,
                           child: TextButton(
                             onPressed: () {},
-                            child: Text(
-                              AppStrings.forgotPassword,
-                              style: FontManager.headerSubtitleText(),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ForgotPassScreen(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                AppStrings.forgotPassword,
+                                style: FontManager.headerSubtitleText(),
+                              ),
                             ),
                           ),
                         ),
 
                         // Login button
-                        CustomPrimaryButton(text: 'Login ',),
+                        CustomPrimaryButton(
+                          text: 'Login ',
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomePageScreen(),
+                              ),
+                            );
+                          },
+                        ),
                         AppSpacing.h20,
                       ],
                     ),
@@ -192,9 +214,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: FontManager.bodyText().copyWith(
                             fontWeight: FontWeight.w700,
                           ),
-                          recognizer: TapGestureRecognizer().. onTap = (){Navigator.push(context, MaterialPageRoute(builder: (context) => NormalSignUp        (),));}
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => NormalSignUp(),
+                                ),
+                              );
+                            },
                         ),
-                        
                       ],
                     ),
                   ),
@@ -237,9 +266,7 @@ class CustomPrimaryButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor ?? AppColors.primaryColor,
           foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: AppPadding.c12,
-          ),
+          shape: RoundedRectangleBorder(borderRadius: AppPadding.c12),
         ),
         onPressed: () {
           if (formKey == null || (formKey!.currentState?.validate() ?? false)) {
@@ -263,10 +290,7 @@ class CustomPrimaryButton extends StatelessWidget {
                     prefixIcon!,
                     SizedBox(width: 8.w),
                   ],
-                  Text(
-                    text,
-                    style: textStyle ?? FontManager.whiteButtonText(),
-                  ),
+                  Text(text, style: textStyle ?? FontManager.whiteButtonText()),
                 ],
               ),
       ),
@@ -359,6 +383,7 @@ class CustomOutlinedButton extends StatelessWidget {
     );
   }
 }
+
 class LabeledField extends StatelessWidget {
   final String hintText;
   final TextEditingController? controller;
