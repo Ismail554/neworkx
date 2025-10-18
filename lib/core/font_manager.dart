@@ -10,7 +10,9 @@ class FontManager {
 
   // Font Weights
   static const FontWeight w400 = FontWeight.w400;
+  static const FontWeight w600 = FontWeight.w600;
   static const FontWeight w700 = FontWeight.w700;
+  static const FontWeight w800 = FontWeight.w800;
 
   // Default Text Colors
   static const Color mainTextColor = AppColors.black;
@@ -35,10 +37,33 @@ class FontManager {
   );
 
   // Subtitle Text
-  static TextStyle subtitleText() => GoogleFonts.montserrat(
+  static TextStyle subtitleText({
+    double fontSize = 14,
+    Color color = Colors.grey,
+  }) => GoogleFonts.montserrat(
+    fontSize: fontSize.sp,
+    fontWeight: FontWeight.w400,
+    color: color,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
+
+  // General Text
+  static TextStyle generalText({
+    double fontSize = 12,
+    Color color = Colors.grey,
+  }) => GoogleFonts.montserrat(
+    fontSize: fontSize.sp,
+    fontWeight: FontWeight.w500,
+    color: color,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
+
+  static TextStyle boldSubtitleText() => GoogleFonts.montserrat(
     fontSize: 14.sp,
-    fontWeight: w400,
-    color: subtitleColor,
+    fontWeight: w600,
+    color: mainTextColor,
     height: 1.0,
     letterSpacing: 0.0,
   );
