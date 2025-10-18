@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neworkx/views/geo/geo_sign_up.dart';
 import 'package:neworkx/views/splash_screen.dart';
 
 void main() {
@@ -19,9 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-
-        ),
+        theme: ThemeData(),
         home: child,
       ),
       child: SplashScreen(),

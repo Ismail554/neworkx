@@ -19,11 +19,12 @@ class AppColors {
   static const Color red = Color(0xFFFF0040);
   static const Color yellow = Color(0xFFFDC300);
   static const Color green = Color(0xFF28A745);
-  static const Color blue = Color(0xFF1E90FF);
+  static const Color blue = Color(0xFF1E90FF); //#1E90FF
   static const Color blueTransparent = Color(0x421E90FF); // 0x26 = ~15% opacity
   static const Color amberTransparent = Color(0x4DA66E00); // from #A66E004D
 
   static const Color borderColor = Color(0xffD4D4D4);
 
-  static const Color statFillColor = Color(0xf1E90FF26);
+  static const Color statFillColor = Color(0xf1E90FF);
+  static const Color barFillColor = Color(0xf8fddff);
 }

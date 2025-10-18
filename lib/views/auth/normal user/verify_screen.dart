@@ -86,156 +86,160 @@ class _VerifyScreenState extends State<VerifyScreen> {
 
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Icon(Icons.arrow_back_outlined, color: Colors.black),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(Icons.arrow_back_outlined, color: Colors.black),
+                  ),
                 ),
               ),
-            ),
-            Text(
-              AppStrings.verifyAccountTitle,
-              style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w700),
-            ),
-            Text(AppStrings.almostDone),
-            AppSpacing.h16,
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(20.r),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
-                      blurRadius: 8,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: CircleAvatar(
-                        radius: 26.r,
-                        backgroundColor: Colors.black,
-                        child: Image.asset(
-                          "assets/images/lock.png",
-                          fit: BoxFit.fill,
-                          width: 22.w,
-                          height: 26.h,
+              Text(
+                AppStrings.verifyAccountTitle,
+                style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w700),
+              ),
+              Text(AppStrings.almostDone),
+              AppSpacing.h16,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(20.r),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 8,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Center(
+                        child: CircleAvatar(
+                          radius: 26.r,
+                          backgroundColor: Colors.black,
+                          child: Image.asset(
+                            "assets/images/lock.png",
+                            fit: BoxFit.fill,
+                            width: 22.w,
+                            height: 26.h,
+                          ),
                         ),
                       ),
-                    ),
-                    AppSpacing.h12,
-                    Text(
-                      AppStrings.verificationCodePrompt,
-                      style: FontManager.bigTitle(),
-                    ),
-                    AppSpacing.h16,
-                    Text(
-                      AppStrings.verificationCodeSent,
-                      style: FontManager.subtitleText(),
-                    ),
-                    AppSpacing.h10,
-                    Text(
-                      AppStrings.verEmail,
-                      style: FontManager.subSubtitleText(),
-                    ),
-                    AppSpacing.h32,
-                    Center(
-                      child: Pinput(
-                        controller: _pinController,
-                        focusNode: _pinFocusNode,
-                        length: 6,
-                        defaultPinTheme: defaultPinTheme,
-                        focusedPinTheme: focusedPinTheme,
-                        submittedPinTheme: submittedPinTheme,
-                        pinAnimationType: PinAnimationType.fade,
-                        hapticFeedbackType: HapticFeedbackType.lightImpact,
-                        onCompleted: (pin) {
-                          debugPrint('Completed: $pin');
-                        },
-                        onChanged: (value) {
-                          debugPrint('Changed: $value');
-                        },
-                        cursor: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(bottom: 8.h),
-                              width: 22.w,
-                              height: 1.h,
-                              color: const Color(0xFF7C3AED),
+                      AppSpacing.h12,
+                      Text(
+                        AppStrings.verificationCodePrompt,
+                        style: FontManager.bigTitle(),
+                      ),
+                      AppSpacing.h16,
+                      Text(
+                        AppStrings.verificationCodeSent,
+                        style: FontManager.subtitleText(),
+                      ),
+                      AppSpacing.h10,
+                      Text(
+                        AppStrings.verEmail,
+                        style: FontManager.subSubtitleText(),
+                      ),
+                      AppSpacing.h32,
+                      Center(
+                        child: Pinput(
+                          controller: _pinController,
+                          focusNode: _pinFocusNode,
+                          length: 6,
+                          defaultPinTheme: defaultPinTheme,
+                          focusedPinTheme: focusedPinTheme,
+                          submittedPinTheme: submittedPinTheme,
+                          pinAnimationType: PinAnimationType.fade,
+                          hapticFeedbackType: HapticFeedbackType.lightImpact,
+                          onCompleted: (pin) {
+                            debugPrint('Completed: $pin');
+                          },
+                          onChanged: (value) {
+                            debugPrint('Changed: $value');
+                          },
+                          cursor: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(bottom: 8.h),
+                                width: 22.w,
+                                height: 1.h,
+                                color: const Color(0xFF7C3AED),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 24.h),
+                      // Verify Button
+                      SizedBox(
+                        width: double.infinity,
+                        height: 52.h,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (_pinController.text.length == 6) {
+                              debugPrint(
+                                'Verifying PIN: ${_pinController.text}',
+                              );
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF7C3AED),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.r),
                             ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 24.h),
-                    // Verify Button
-                    SizedBox(
-                      width: double.infinity,
-                      height: 52.h,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          if (_pinController.text.length == 6) {
-                            debugPrint('Verifying PIN: ${_pinController.text}');
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF7C3AED),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.r),
+                            elevation: 0,
                           ),
-                          elevation: 0,
-                        ),
-                        child: Text(
-                          'Verify Account',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                          child: Text(
+                            'Verify Account',
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 20.h),
-                    // Resend Code Timer
-                    Text(
-                      'Resend code in ${_resendTimer}s',
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black87,
+                      SizedBox(height: 20.h),
+                      // Resend Code Timer
+                      Text(
+                        'Resend code in ${_resendTimer}s',
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black87,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 12.h),
-                    // Help Text
-                    Text(
-                      'Didn\'t receive the code? Check your\nspam folder or try again',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 13.sp,
-                        color: Colors.grey[400],
-                        height: 1.4,
+                      SizedBox(height: 12.h),
+                      // Help Text
+                      Text(
+                        'Didn\'t receive the code? Check your\nspam folder or try again',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 13.sp,
+                          color: Colors.grey[400],
+                          height: 1.4,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
