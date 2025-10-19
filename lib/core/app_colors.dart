@@ -18,6 +18,7 @@ class AppColors {
   /* ==================== Accent Colors ==================== */
   static const Color red = Color(0xFFFF0040);
   static const Color yellow = Color(0xFFFDC300);
+  static const Color darkorange = Color.fromARGB(15, 171, 103, 2); //#FDAF37
   static const Color green = Color(0xFF28A745);
   static const Color blue = Color(0xFF1E90FF); //#1E90FF
   static const Color blueTransparent = Color(0x421E90FF); // 0x26 = ~15% opacity
@@ -27,4 +28,6 @@ class AppColors {
 
   static const Color statFillColor = Color(0xf1E90FF);
   static const Color barFillColor = Color(0xf8fddff);
+  static const Color subtitleLightColor = Color(0xf4B4B4B); //#4B4B4B
+  static const Color subSubtitleColor = Color(0xfA6A6A6);
 }

@@ -4,6 +4,8 @@ import 'package:neworkx/core/app_colors.dart';
 import 'package:neworkx/core/app_spacing.dart';
 import 'package:neworkx/core/app_strings.dart';
 import 'package:neworkx/core/font_manager.dart';
+import 'package:neworkx/views/HomePage/details_home_screen.dart';
+import 'package:neworkx/views/HomePage/notification.dart';
 import 'package:neworkx/views/HomePage/value.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -123,7 +125,15 @@ class _HomeContent extends StatelessWidget {
               ],
             ),
             Spacer(),
-            Icon(Icons.notifications),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationScreen()),
+                );
+              },
+              child: Icon(Icons.notifications),
+            ),
           ],
         ),
       ),
@@ -310,144 +320,152 @@ class JobCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity.w,
-      height: 178.h,
-      padding: EdgeInsets.all(12.r),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            spreadRadius: 2,
-            blurRadius: 4,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Top row with logo and job info
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Logo/Company Icon
-              Container(
-                width: 52.w,
-                height: 52.h,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.r),
-                  child: Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Image.asset(logoPath, fit: BoxFit.fill),
+    return InkWell(
+      onDoubleTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => DetailsHomeScreen()),
+        );
+      },
+      child: Container(
+        width: double.infinity.w,
+        height: 178.h,
+        padding: EdgeInsets.all(12.r),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 2,
+              blurRadius: 4,
+              offset: Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Top row with logo and job info
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Logo/Company Icon
+                Container(
+                  width: 52.w,
+                  height: 52.h,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.r),
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Image.asset(logoPath, fit: BoxFit.fill),
+                    ),
                   ),
                 ),
-              ),
-              AppSpacing.w12,
+                AppSpacing.w12,
 
-              // Company info column
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Company name and deadline badge row
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          companyName,
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.grey[600],
-                          ),
-                        ),
-                        Spacer(),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 4.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xFF4CAF50),
-                            borderRadius: BorderRadius.circular(6.r),
-                          ),
-                          child: Text(
-                            'Deadline - $deadline',
+                // Company info column
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Company name and deadline badge row
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            companyName,
                             style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey[600],
                             ),
                           ),
+                          Spacer(),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8.w,
+                              vertical: 4.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF4CAF50),
+                              borderRadius: BorderRadius.circular(6.r),
+                            ),
+                            child: Text(
+                              'Deadline - $deadline',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      AppSpacing.h2,
+
+                      // Job title
+                      Text(
+                        jobTitle,
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
                         ),
-                      ],
-                    ),
-
-                    AppSpacing.h2,
-
-                    // Job title
-                    Text(
-                      jobTitle,
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
                       ),
-                    ),
-                    AppSpacing.h4,
+                      AppSpacing.h4,
 
-                    // Location
-                    Text(
-                      location,
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        color: Colors.grey[600],
-                        fontWeight: FontWeight.w400,
+                      // Location
+                      Text(
+                        location,
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: Colors.grey[600],
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-
-          SizedBox(height: 12.h),
-
-          // Tags row
-          Row(
-            children: jobTags
-                .map(
-                  (tag) => Padding(
-                    padding: EdgeInsets.only(right: 10.w),
-                    child: JobTag(label: tag),
+                    ],
                   ),
-                )
-                .toList(),
-          ),
-
-          AppSpacing.h10,
-
-          // Description text
-          Expanded(
-            child: Text(
-              description,
-              style: TextStyle(
-                fontSize: 13.sp,
-                color: Colors.grey[700],
-                height: 1.4,
-              ),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
-          ),
-        ],
+
+            SizedBox(height: 12.h),
+
+            // Tags row
+            Row(
+              children: jobTags
+                  .map(
+                    (tag) => Padding(
+                      padding: EdgeInsets.only(right: 10.w),
+                      child: JobTag(label: tag),
+                    ),
+                  )
+                  .toList(),
+            ),
+
+            AppSpacing.h10,
+
+            // Description text
+            Expanded(
+              child: Text(
+                description,
+                style: TextStyle(
+                  fontSize: 13.sp,
+                  color: Colors.grey[700],
+                  height: 1.4,
+                ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
