@@ -17,7 +17,7 @@ class FontManager {
   // Default Text Colors
   static const Color mainTextColor = AppColors.black;
   static final Color subtitleColor = AppColors.grey4B;
-  static const Color subSubtitleColor = AppColors.lightGrey;
+  static const Color subSubtitleColor = AppColors.subSubtitleColor;
 
   // ================== Text Styles ==================
 
@@ -40,11 +40,12 @@ class FontManager {
   static TextStyle subtitleText({
     double fontSize = 14,
     Color color = Colors.grey,
+    double height = 1,
   }) => GoogleFonts.montserrat(
     fontSize: fontSize.sp,
     fontWeight: FontWeight.w400,
     color: color,
-    height: 1.0,
+    height: height,
     letterSpacing: 0.0,
   );
 
@@ -69,20 +70,25 @@ class FontManager {
   );
 
   // Sub-subtitle Text
-  static TextStyle subSubtitleText() => GoogleFonts.montserrat(
-    fontSize: 14.sp,
-    fontWeight: w700,
-    color: AppColors.primaryColor,
+  static TextStyle subSubtitleText({
+    double fontSize = 12,
+    color = AppColors.subSubtitleColor,
+  }) => GoogleFonts.montserrat(
+    fontSize: fontSize.sp,
+    fontWeight: w400,
+    color: color,
     height: 1.0,
     letterSpacing: 0.0,
   );
 
   // Header Subtitle
-  static TextStyle headerSubtitleText() => TextStyle(
-    fontFamily: inter,
-    fontSize: 14.sp,
-    fontWeight: w400,
-    color: subtitleColor,
+  static TextStyle headerSubtitleText({
+    double fontSize = 14,
+    Color color = Colors.black,
+  }) => GoogleFonts.montserrat(
+    fontSize: fontSize,
+    fontWeight: w600,
+    color: color,
     height: 1.0,
     letterSpacing: 0.0,
   );
@@ -130,6 +136,31 @@ class FontManager {
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.white, // text color
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
+
+  // ======= Details page ====//
+  // Header Subtitle
+  static TextStyle boldTitleText({
+    double fontSize = 22,
+    Color color = Colors.black,
+  }) => GoogleFonts.montserrat(
+    fontSize: fontSize.sp,
+    fontWeight: w700,
+    color: color,
+    height: 1.0,
+    letterSpacing: 0.0,
+  );
+
+  // Header Subtitle
+  static TextStyle headlineText({
+    double fontSize = 16,
+    Color color = Colors.black,
+  }) => GoogleFonts.montserrat(
+    fontSize: fontSize,
+    fontWeight: w600,
+    color: color,
     height: 1.0,
     letterSpacing: 0.0,
   );
