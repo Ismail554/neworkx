@@ -27,7 +27,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       if (_resendTimer > 0) {
         setState(() {
           _resendTimer--;
@@ -60,18 +60,18 @@ class _VerifyScreenState extends State<VerifyScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: const Color(0xFF7C3AED), width: 1.5),
+        border: Border.all(color: Color(0xFF7C3AED), width: 1.5),
       ),
     );
 
     final focusedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration!.copyWith(
-        border: Border.all(color: const Color(0xFF7C3AED), width: 2),
+        border: Border.all(color: Color(0xFF7C3AED), width: 2),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF7C3AED).withOpacity(0.2),
+            color: Color(0xFF7C3AED).withOpacity(0.2),
             blurRadius: 8,
-            offset: const Offset(0, 2),
+            offset: Offset(0, 2),
           ),
         ],
       ),
@@ -79,8 +79,8 @@ class _VerifyScreenState extends State<VerifyScreen> {
 
     final submittedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration!.copyWith(
-        color: const Color(0xFFF3F4F6),
-        border: Border.all(color: const Color(0xFF7C3AED), width: 1.5),
+        color: Color(0xFFF3F4F6),
+        border: Border.all(color: Color(0xFF7C3AED), width: 1.5),
       ),
     );
 
@@ -90,7 +90,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: InkWell(
@@ -108,7 +108,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
               Text(AppStrings.almostDone),
               AppSpacing.h16,
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Container(
                   width: double.infinity,
                   padding: EdgeInsets.all(20.r),
@@ -119,7 +119,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                       BoxShadow(
                         color: Colors.black.withOpacity(0.05),
                         blurRadius: 8,
-                        offset: const Offset(0, 4),
+                        offset: Offset(0, 4),
                       ),
                     ],
                   ),
@@ -177,13 +177,14 @@ class _VerifyScreenState extends State<VerifyScreen> {
                                 margin: EdgeInsets.only(bottom: 8.h),
                                 width: 22.w,
                                 height: 1.h,
-                                color: const Color(0xFF7C3AED),
+                                color: Color(0xFF7C3AED),
                               ),
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(height: 24.h),
+
+                      AppSpacing.h24,
                       // Verify Button
                       SizedBox(
                         width: double.infinity,
@@ -197,7 +198,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF7C3AED),
+                            backgroundColor: Color(0xFF7C3AED),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.r),
                             ),
@@ -213,7 +214,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20.h),
+                      AppSpacing.h20,
                       // Resend Code Timer
                       Text(
                         'Resend code in ${_resendTimer}s',
@@ -223,7 +224,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
                           color: Colors.black87,
                         ),
                       ),
-                      SizedBox(height: 12.h),
+                      AppSpacing.h12,
                       // Help Text
                       Text(
                         'Didn\'t receive the code? Check your\nspam folder or try again',

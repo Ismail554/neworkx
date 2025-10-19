@@ -434,8 +434,7 @@ class JobCard extends StatelessWidget {
                 ),
               ],
             ),
-
-            SizedBox(height: 12.h),
+            AppSpacing.h12,
 
             // Tags row
             Row(
