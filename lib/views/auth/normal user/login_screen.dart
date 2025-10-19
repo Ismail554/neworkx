@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
         width: double.infinity,
         child: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       BoxShadow(
                         color: Colors.black.withOpacity(0.05),
                         blurRadius: 8,
-                        offset: const Offset(0, 4),
+                        offset: Offset(0, 4),
                       ),
                     ],
                   ),
@@ -208,7 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: TextSpan(
                       style: FontManager.bodyText(),
                       children: [
-                        const TextSpan(text: "Don't have an account? "),
+                        TextSpan(text: "Don't have an account? "),
                         TextSpan(
                           text: 'Sign UP',
                           style: FontManager.bodyText().copyWith(
@@ -286,10 +286,7 @@ class CustomPrimaryButton extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (prefixIcon != null) ...[
-                    prefixIcon!,
-                    SizedBox(width: 8.w),
-                  ],
+                  if (prefixIcon != null) ...[prefixIcon!, AppSpacing.w8],
                   Text(text, style: textStyle ?? FontManager.whiteButtonText()),
                 ],
               ),
@@ -374,7 +371,7 @@ class CustomOutlinedButton extends StatelessWidget {
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.black,
-          side: const BorderSide(color: AppColors.greyD4),
+          side: BorderSide(color: AppColors.greyD4),
           shape: RoundedRectangleBorder(borderRadius: AppPadding.c12),
         ),
         onPressed: onPressed,
@@ -420,19 +417,19 @@ class LabeledField extends StatelessWidget {
           contentPadding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
           enabledBorder: OutlineInputBorder(
             borderRadius: AppPadding.c8,
-            borderSide: const BorderSide(color: AppColors.greyD4),
+            borderSide: BorderSide(color: AppColors.greyD4),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: AppPadding.c8,
-            borderSide: const BorderSide(color: AppColors.primaryColor),
+            borderSide: BorderSide(color: AppColors.primaryColor),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: AppPadding.c8,
-            borderSide: const BorderSide(color: AppColors.red),
+            borderSide: BorderSide(color: AppColors.red),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: AppPadding.c8,
-            borderSide: const BorderSide(color: AppColors.red),
+            borderSide: BorderSide(color: AppColors.red),
           ),
         ),
       ),

@@ -176,9 +176,9 @@ class DetailsHomeScreen extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
-          SizedBox(height: 8.h),
+          AppSpacing.h8,
           Text(title, style: FontManager.headerSubtitleText()),
-          SizedBox(height: 4.h),
+          AppSpacing.h4,
           Text(
             value,
             style: TextStyle(

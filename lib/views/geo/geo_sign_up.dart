@@ -31,7 +31,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfFA8D8FF),
+      backgroundColor: Color(0xfFA8D8FF),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -45,17 +45,14 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                   height: 100.h,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(
-                      color: const Color(0xFF4CAF50),
-                      width: 4,
-                    ),
-                    image: const DecorationImage(
+                    border: Border.all(color: Color(0xFF4CAF50), width: 4),
+                    image: DecorationImage(
                       image: AssetImage('assets/images/man.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                SizedBox(height: 12.h),
+                AppSpacing.h12,
                 // Name and title
                 Align(
                   alignment: Alignment.center,
@@ -100,7 +97,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20.h),
+                    AppSpacing.h20,
 
                     // Full Name Field
                     buildTextField(
@@ -108,7 +105,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                       hint: 'Enter Full Name',
                       controller: _fullNameController,
                     ),
-                    SizedBox(height: 16.h),
+                    AppSpacing.h16,
 
                     // Email Field
                     buildTextField(
@@ -117,7 +114,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                       controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                     ),
-                    SizedBox(height: 16.h),
+                    AppSpacing.h16,
 
                     // Password Field
                     buildTextField(
@@ -126,7 +123,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                       controller: _passwordController,
                       isPassword: true,
                     ),
-                    SizedBox(height: 16.h),
+                    AppSpacing.h16,
 
                     // Confirm Password Field
                     buildTextField(
@@ -135,7 +132,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                       controller: _confirmPasswordController,
                       isPassword: true,
                     ),
-                    SizedBox(height: 24.h),
+                    AppSpacing.h24,
 
                     // Sign Up Button
                     SizedBox(
@@ -147,7 +144,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                           debugPrint('Sign Up Pressed');
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF42A5F5),
+                          backgroundColor: Color(0xFF42A5F5),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.r),
                           ),
@@ -163,7 +160,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20.h),
+                    AppSpacing.h20,
 
                     // OR divider
                     Row(
@@ -186,7 +183,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.h),
+                    AppSpacing.h20,
 
                     // Google Login Button
                     SizedBox(
@@ -213,7 +210,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                               width: 20.w,
                               height: 20.h,
                             ),
-                            SizedBox(width: 8.w),
+                            AppSpacing.w8,
                             Text(
                               'Google',
                               style: TextStyle(
@@ -226,7 +223,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    AppSpacing.h16,
 
                     // Login link
                     Center(
@@ -250,7 +247,7 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    AppSpacing.h16,
                   ],
                 ),
               ),
@@ -274,19 +271,19 @@ class _GeoSignUpScreenState extends State<GeoSignUpScreen> {
         Text(
           label,
           style: TextStyle(
-            fontSize: 13.sp,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.black,
           ),
         ),
-        SizedBox(height: 8.h),
+        AppSpacing.h8,
         TextField(
           controller: controller,
           keyboardType: keyboardType,
           obscureText: isPassword,
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: TextStyle(fontSize: 13.sp, color: Colors.grey[400]),
+            hintStyle: TextStyle(fontSize: 14.sp, color: Colors.grey[400]),
             contentPadding: EdgeInsets.symmetric(
               horizontal: 16.w,
               vertical: 12.h,
