@@ -4,7 +4,7 @@ class AppStrings {
   static const String notification = "Notifications";
 
   // Welcome / Intro
-  static const String welcomeText = "Welcome to Newworkx";
+  static const String welcomeText = "Welcome to Neworkx";
   static const String signIn = "Sign In to your Newwork";
   static const String forgotPassword = "Forgot password?";
   static const String loginButton = "Log In";
